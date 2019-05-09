@@ -29,4 +29,16 @@ class TodoModel
             echo 'Unexpected error';
         }
     }
+
+    public function completeTodo($id)
+    {
+        $statement = 'UPDATE `todo_list` SET `completed` = 1 WHERE `id` = :id';
+        $query = $this->dbConn->prepare($statement);
+        $query->bindParam(':id', $id);
+        try {
+            return $query->execute();
+        } catch(\PDOException $exception) {
+            echo 'Error!';
+        }
+    }
 }
