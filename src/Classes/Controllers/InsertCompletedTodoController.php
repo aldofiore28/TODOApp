@@ -21,7 +21,7 @@ class InsertCompletedTodoController
         $id = $userData['id'];
         $result = $this->todoModel->reInsertTodo($id);
         if ($result) {
-            $response->withRedirect('/');
+            return $response->withRedirect('/');
         }
     }
 }
