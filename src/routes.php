@@ -4,5 +4,5 @@ use Slim\App;
 
 return function (App $app) {
 
-    $app->get('/', '');
+    $app->get('/', 'homePageController');
 };

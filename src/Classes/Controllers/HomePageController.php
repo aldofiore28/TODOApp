@@ -15,6 +15,6 @@ class HomePageController
 
     public function __invoke($request, $response, $args)
     {
-        // TODO write code here.
+        $this->renderer->render($response, 'homePage.phtml', $args);
     }
 }

@@ -1,1 +1,87 @@
-<h1>Hello world!</h1>
+<html lang="en">
+<head>
+    <title>Todo App</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-family: sans-serif;
+        }
+
+        main {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: orange;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .todo {
+            padding: 5px;
+            border: 1px solid black;
+            overflow: auto;
+        }
+
+        .description {
+            float: left;
+            width: 80%;
+        }
+
+        .finish-todo {
+            float: right;
+            width: 20%;
+        }
+
+        .finish-todo a {
+            float: right;
+            border: 1px solid black;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="todos">
+            <h1 class="title">TO DO</h1>
+            <article class="todo">
+                <div class="description">
+                    <p>Lalalalalala cacca merda</p>
+                </div>
+                <div class="finish-todo">
+                    <a href="#">DONE</a>
+                </div>
+            </article>
+        </section>
+        <section class="completed-todos">
+            <h1 class="completed-title">COMPLETED</h1>
+            <article class="todo">
+                <div class="description">
+                    <p>Lalalalalala cacca merda</p>
+                </div>
+                <div class="finish-todo">
+                    <a href="#">DONE</a>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
