@@ -9,25 +9,25 @@ class TodoEntity
     private $completed;
 
     /**
-     * @return mixed
+     * @return integer
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getDescription()
+    public function getDescription() :string
     {
         return $this->description;
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
-    public function getCompleted()
+    public function getCompleted() :int
     {
         return $this->completed;
     }
