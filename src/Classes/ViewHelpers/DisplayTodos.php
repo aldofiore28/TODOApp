@@ -17,6 +17,7 @@ class DisplayTodos
                                 </div>
                                 <div class="finish-todo">
                                     <form method="post" action="/completeTodo">
+                                        <input type="hidden" value="' . $todo->getId() . '">
                                         <input type="submit" value="DONE">
                                     </form>
                                 </div>
