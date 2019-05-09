@@ -17,4 +17,16 @@ class TodoModel
     {
         return TodoHydrator::getTodos($this->dbConn);
     }
+
+    public function addTodo($description)
+    {
+        $statement = 'INSERT INTO `todo_list`(`description`) VALUES (:description);';
+        $query = $this->dbConn->prepare($statement);
+        $query->bindParam(':description', $description);
+        try {
+            return $query->execute();
+        } catch (\PDOException $exception) {
+            echo 'Unexpected error';
+        }
+    }
 }
