@@ -10,4 +10,9 @@ class CompleteTodoController
     {
         $this->todoModel = $todoModel;
     }
+
+    public function __invoke($request, $response, $args)
+    {
+
+    }
 }

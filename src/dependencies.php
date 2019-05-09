@@ -32,4 +32,5 @@ return function (App $app) {
     $container['todoModel'] = new \Todo\Factories\TodoModelFactory();
     $container['homePageController'] = new \Todo\Factories\HomePageControllerFactory();
     $container['addTodo'] = new \Todo\Factories\AddTodoControllerFactory();
+    $container['CompleteTodo'] = new \Todo\Factories\CompleteTodoControllerFactory();
 };
