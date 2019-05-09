@@ -6,7 +6,7 @@ use Todo\Entities\TodoEntity;
 
 class DisplayTodos
 {
-    public static function displayTodos($todos)
+    public static function displayTodos(array $todos) :string
     {
         $result = '';
         foreach($todos as $todo) {
@@ -26,7 +26,7 @@ class DisplayTodos
         return $result;
     }
 
-    public static function displayCompletedTodos($todos)
+    public static function displayCompletedTodos(array $todos) :string
     {
         $result = '';
         foreach($todos as $todo) {

@@ -13,17 +13,17 @@ class TodoModel
         $this->dbConn = $dbConn;
     }
 
-    public function hydrateTodos()
+    public function hydrateTodos() :array
     {
         return TodoHydrator::getTodos($this->dbConn);
     }
 
-    public function hydrateCompletedTodos()
+    public function hydrateCompletedTodos() :array
     {
         return TodoHydrator::getCompletedTodos($this->dbConn);
     }
 
-    public function addTodo($description)
+    public function addTodo(string $description) :bool
     {
         $statement = 'INSERT INTO `todo_list`(`description`) VALUES (:description);';
         $query = $this->dbConn->prepare($statement);
@@ -35,7 +35,7 @@ class TodoModel
         }
     }
 
-    public function completeTodo($id)
+    public function completeTodo(int $id) :bool
     {
         $statement = 'UPDATE `todo_list` SET `completed` = 1 WHERE `id` = :id';
         $query = $this->dbConn->prepare($statement);
