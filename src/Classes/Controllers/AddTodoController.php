@@ -2,16 +2,20 @@
 
 namespace Todo\Controllers;
 
+use Slim\Http\Request;
+use Slim\Http\Response;
+use Todo\Models\TodoModel;
+
 class AddTodoController
 {
     protected $todoModel;
 
-    public function __construct($todoModel)
+    public function __construct(TodoModel $todoModel)
     {
         $this->todoModel = $todoModel;
     }
 
-    public function __invoke($request, $response, $args)
+    public function __invoke(Request $request, Response $response, array $args)
     {
         $userData = $request->getParsedBody();
         $description = $userData['description'];
