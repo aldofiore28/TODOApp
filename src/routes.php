@@ -4,8 +4,8 @@ use Slim\App;
 
 return function (App $app) {
 
-    $app->get('/', 'homePageController');
-    $app->post('/addTodo', 'addTodo');
-    $app->post('/completeTodo', 'completeTodo');
-    $app->post('/reinsertTodo', 'insertCompletedTodo');
+    $app->get('/homepage', 'homePageController');
+    $app->post('/homepage/addTodo', 'addTodo');
+    $app->post('/homepage/completeTodo', 'completeTodo');
+    $app->post('/homepage/reinsertTodo', 'insertCompletedTodo');
 };
