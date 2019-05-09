@@ -11,6 +11,7 @@ return function (App $app) {
         return new \Slim\Views\PhpRenderer($settings['template_path']);
     };
 
+    // database
     $container['dbConnection'] = function ($c) {
         $settings = $c->get('settings')['db'];
         $db = new PDO($settings['host'].$settings['dbName'], $settings['userName']);
