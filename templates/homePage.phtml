@@ -96,8 +96,16 @@
         <section class="todos">
             <h1 class="title">TO DO</h1>
             <?php
-                if(isset($data)) {
-                    echo \Todo\ViewHelpers\DisplayTodos::displayTodos($data);
+                if(isset($todos)) {
+                    echo \Todo\ViewHelpers\DisplayTodos::displayTodos($todos);
+                }
+            ?>
+        </section>
+        <section class="todos">
+            <h1 class="title">Completed</h1>
+            <?php
+                if(isset($completedTodos)) {
+                    echo \Todo\ViewHelpers\DisplayTodos::displayCompletedTodos($completedTodos);
                 }
             ?>
         </section>

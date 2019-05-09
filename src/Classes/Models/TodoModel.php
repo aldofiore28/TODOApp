@@ -18,6 +18,11 @@ class TodoModel
         return TodoHydrator::getTodos($this->dbConn);
     }
 
+    public function hydrateCompletedTodos()
+    {
+        return TodoHydrator::getCompletedTodos($this->dbConn);
+    }
+
     public function addTodo($description)
     {
         $statement = 'INSERT INTO `todo_list`(`description`) VALUES (:description);';

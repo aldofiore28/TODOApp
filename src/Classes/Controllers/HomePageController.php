@@ -15,7 +15,8 @@ class HomePageController
 
     public function __invoke($request, $response, $args)
     {
-        $args['data'] = $this->todoModel->hydrateTodos();
+        $args['todos'] = $this->todoModel->hydrateTodos();
+        $args['completedTodos'] = $this->todoModel->hydrateCompletedTodos();
         $this->renderer->render($response, 'homePage.phtml', $args);
     }
 }
