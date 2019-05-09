@@ -19,5 +19,9 @@ class InsertCompletedTodoController
     {
         $userData = $request->getParsedBody();
         $id = $userData['id'];
+        $result = $this->todoModel->reInsertTodo($id);
+        if ($result) {
+            $response->withRedirect('/');
+        }
     }
 }
