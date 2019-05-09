@@ -23,7 +23,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "Todo\\": "src/Classes"
+            "Todo\\": "src/Classes/"
         }
     },
     "config": {
