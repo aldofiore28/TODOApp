@@ -16,6 +16,7 @@ return [
             'level' => \Monolog\Logger::DEBUG,
         ],
 
+        //Database connection settings
         'db' => [
             'host' => 'mysql:host=192.168.20.20;',
             'dbName' => 'dbname=todo_app',
