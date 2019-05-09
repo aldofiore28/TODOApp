@@ -13,6 +13,11 @@ class CompleteTodoController
 
     public function __invoke($request, $response, $args)
     {
-
+        $userData = $request->getParsedBody();
+        $id = $userData['id'];
+        $result = $this->todoModel->completeTodo($id);
+        if ($result) {
+            return $response->withRedirect('/');
+        }
     }
 }
