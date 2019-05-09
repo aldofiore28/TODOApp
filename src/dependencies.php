@@ -29,5 +29,5 @@ return function (App $app) {
     };
 
     //Factories
-    $container['TodoModel'] = new \Todo\Factories\TodoModelFactory();
+    $container['todoModel'] = new \Todo\Factories\TodoModelFactory();
 };
