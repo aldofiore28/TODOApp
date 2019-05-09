@@ -2,18 +2,11 @@
 
 namespace Todo\Entities;
 
-class Todo
+class TodoEntity
 {
     private $id;
     private $description;
     private $completed;
-
-    public function __construct($id, $description, $completed)
-    {
-        $this->id = $id;
-        $this->description = $description;
-        $this->completed = $completed;
-    }
 
     /**
      * @return mixed

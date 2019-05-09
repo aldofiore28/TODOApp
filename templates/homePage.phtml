@@ -1,3 +1,20 @@
+<?php
+if(isset($data)) {
+    $result = '';
+    foreach($data as $todo) {
+        $result .= '<article class="todo">
+                        <div class="description">
+                            <p>' . $todo->getDescription() . '</p>
+                        </div>
+                        <div class="finish-todo">
+                            <a href="/doneTodo">DONE</a>
+                        </div>
+                    </article>';
+
+    }
+}
+
+?>
 <html lang="en">
 <head>
     <title>Todo App</title>
@@ -34,6 +51,7 @@
         }
 
         .todo {
+            margin-top: 10px;
             padding: 5px;
             border: 1px solid black;
             overflow: auto;
@@ -62,25 +80,11 @@
     <main>
         <section class="todos">
             <h1 class="title">TO DO</h1>
-            <article class="todo">
-                <div class="description">
-                    <p>Lalalalalala cacca merda</p>
-                </div>
-                <div class="finish-todo">
-                    <a href="#">DONE</a>
-                </div>
-            </article>
-        </section>
-        <section class="completed-todos">
-            <h1 class="completed-title">COMPLETED</h1>
-            <article class="todo">
-                <div class="description">
-                    <p>Lalalalalala cacca merda</p>
-                </div>
-                <div class="finish-todo">
-                    <a href="#">DONE</a>
-                </div>
-            </article>
+            <?php
+                if(isset($result)) {
+                    echo $result;
+                }
+            ?>
         </section>
     </main>
 </body>
