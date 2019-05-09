@@ -16,7 +16,7 @@ class DisplayTodos
                                     <p>' . $todo->getDescription() . '</p>
                                 </div>
                                 <div class="finish-todo">
-                                    <form method="post" action="/completeTodo">
+                                    <form method="post" action="homepage/completeTodo">
                                         <input type="hidden" name="id" value="' . $todo->getId() . '">
                                         <input type="submit" value="DONE">
                                     </form>
@@ -36,7 +36,7 @@ class DisplayTodos
                                     <p>' . $todo->getDescription() . '</p>
                                 </div>
                                 <div class="finish-todo">
-                                    <form method="post" action="/reinsertTodo">
+                                    <form method="post" action="homepage/reinsertTodo">
                                         <input type="hidden" name="id" value="' . $todo->getId() . '">
                                         <input type="submit" value="TRY AGAIN">
                                     </form>

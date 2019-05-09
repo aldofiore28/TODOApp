@@ -21,7 +21,7 @@ class AddTodoController
         $description = $userData['description'];
         $result = $this->todoModel->addTodo($description);
         if ($result) {
-            return $response->withRedirect('/');
+            return $response->withRedirect('/homepage');
         }
     }
 }

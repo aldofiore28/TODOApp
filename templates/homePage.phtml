@@ -23,20 +23,19 @@
         }
 
         section {
-            margin-top: 20px;
             padding: 10px;
-            background-color: orange;
+            background-color: #FFA500;
         }
 
         a {
-            color: black;
+            color: #000000;
             text-decoration: none;
         }
 
         .todo {
             margin-top: 10px;
             padding: 5px;
-            border: 1px solid black;
+            border: 1px solid #000000;
             overflow: auto;
         }
 
@@ -52,7 +51,7 @@
 
         .finish-todo a {
             float: right;
-            border: 1px solid black;
+            border: 1px solid #000000;
             padding: 3px;
             border-radius: 5px;
         }
@@ -84,7 +83,7 @@
         }
 
         .finish-todo input {
-            border: 1px solid black;
+            border: 1px solid #000000;
             padding: 3px;
             border-radius: 5px;
         }
@@ -109,7 +108,7 @@
                 }
             ?>
         </section>
-        <form method="POST" action="/addTodo">
+        <form method="POST" action="homepage/addTodo">
             <h3>Add To do:</h3>
             <label for="description">Description:</label>
             <textarea id="description" name="description" placeholder="To do..."></textarea>

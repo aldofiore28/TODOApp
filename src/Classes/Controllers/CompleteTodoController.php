@@ -21,7 +21,7 @@ class CompleteTodoController
         $id = $userData['id'];
         $result = $this->todoModel->completeTodo($id);
         if ($result) {
-            return $response->withRedirect('/');
+            return $response->withRedirect('/homepage');
         }
     }
 }
