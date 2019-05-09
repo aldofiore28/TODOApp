@@ -46,4 +46,16 @@ class TodoModel
             echo 'Error!';
         }
     }
+
+    public function reInsertTodo(int $id) :bool
+    {
+        $statement = 'UPDATE `todo_list` SET `completed` = 0 WHERE `id` = :id';
+        $query = $this->dbConn->prepare($statement);
+        $query->bindParam(':id', $id);
+        try {
+            return $query->execute();
+        } catch(\PDOException $exception) {
+            echo 'Error!';
+        }
+    }
 }
