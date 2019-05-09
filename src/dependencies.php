@@ -27,4 +27,7 @@ return function (App $app) {
         $logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
         return $logger;
     };
+
+    //Factories
+    $container['TodoModel'] = new \Todo\Factories\TodoModelFactory();
 };
