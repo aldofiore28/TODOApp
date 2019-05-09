@@ -1,0 +1,90 @@
+<?php
+if(isset($data)) {
+    $result = '';
+    foreach($data as $todo) {
+        $result .= '<article class="todo">
+                        <div class="description">
+                            <p>' . $todo->getDescription() . '</p>
+                        </div>
+                        <div class="finish-todo">
+                            <a href="/doneTodo">DONE</a>
+                        </div>
+                    </article>';
+    }
+}
+
+?>
+<html lang="en">
+<head>
+    <title>Todo App</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-family: sans-serif;
+        }
+
+        main {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: orange;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .todo {
+            margin-top: 10px;
+            padding: 5px;
+            border: 1px solid black;
+            overflow: auto;
+        }
+
+        .description {
+            float: left;
+            width: 80%;
+        }
+
+        .finish-todo {
+            float: right;
+            width: 20%;
+        }
+
+        .finish-todo a {
+            float: right;
+            border: 1px solid black;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="todos">
+            <h1 class="title">TO DO</h1>
+            <?php
+                if(isset($result)) {
+                    echo $result;
+                }
+            ?>
+        </section>
+    </main>
+</body>
+</html>
