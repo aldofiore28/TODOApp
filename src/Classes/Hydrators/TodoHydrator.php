@@ -17,4 +17,16 @@ class TodoHydrator
             echo 'Unexpected error';
         }
     }
+
+    public static function getCompletedTodos($dbConn)
+    {
+        $statement = 'SELECT `id`, `description`, `completed` FROM `todo_list` WHERE `completed` = 1;';
+        $query = $dbConn->prepare($statement);
+        try {
+            $query->execute();
+            return $query->fetchAll(\PDO::FETCH_CLASS, TodoEntity::class);
+        } catch (\PDOException $exception) {
+            echo 'Unexpected error';
+        }
+    }
 }
