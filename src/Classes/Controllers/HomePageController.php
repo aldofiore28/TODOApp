@@ -20,8 +20,19 @@ class HomePageController
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        $args['todos'] = $this->todoModel->hydrateTodos();
-        $args['completedTodos'] = $this->todoModel->hydrateCompletedTodos();
+        $todos = $this->todoModel->hydrateTodos();
+        $completedTodos = $this->todoModel->hydrateCompletedTodos();
+        $todayDate = date('Y-m-d');
+        foreach ($todos as $key=>$value) {
+            if (date('Y-m-d', strtotime($value->getDeadline())) >= $todayDate) {
+                continue;
+            } else {
+                array_push($completedTodos, $value);
+                unset($todos[$key]);
+            }
+        }
+        $args['todos'] = $todos;
+        $args['completedTodos'] = $completedTodos;
         $this->renderer->render($response, 'homePage.phtml', $args);
     }
 }
