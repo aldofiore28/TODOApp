@@ -9,11 +9,18 @@
     <link type="text/css" rel="stylesheet" href="css/chooseUser.css">
 </head>
 <body>
-    <form method="GET" action="/homepage">
-        <label for="users">Choose a user's todos list list</label>
-        <select name="user-id" id="users">
-
-        </select>
-    </form>
+    <main>
+        <form method="GET" action="/homepage">
+            <label for="users">Choose a user's todos list</label>
+            <select name="user_id" id="users">
+                <?php
+                    if (isset($users)) {
+                        echo \Todo\ViewHelpers\DisplayUsers::displayUsers($users);
+                    }
+                ?>
+            </select>
+            <input type="submit" value="SEND">
+        </form>
+    </main>
 </body>
 </html>
