@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.43)
 # Database: todo_app
-# Generation Time: 2019-05-10 09:04:40 +0000
+# Generation Time: 2019-05-10 12:11:50 +0000
 # ************************************************************
 
 
@@ -30,6 +30,20 @@ CREATE TABLE `todo_list` (
   `description` varchar(500) NOT NULL,
   `completed` int(11) NOT NULL DEFAULT '0',
   `deadline` date NOT NULL,
+  `list_user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+# Dump of table users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
