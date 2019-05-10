@@ -29,8 +29,10 @@ a {
 
 .todo {
     margin-top: 10px;
+    background-color: #FFB611;
     padding: 5px;
     border: 1px solid #000000;
+    border-radius: 5px;
     overflow: auto;
 }
 
