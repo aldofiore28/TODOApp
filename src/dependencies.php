@@ -37,4 +37,5 @@ return function (App $app) {
     $container['userModel'] = new \Todo\Factories\UserModelFactory();
     $container['chooseUser'] = new \Todo\Factories\ChooseUserControllerFactory();
     $container['redirectUser'] = new \Todo\Factories\RedirectUserFactory();
+    $container['addNewUser'] = new \Todo\Factories\NewUserControllerFactory();
 };
