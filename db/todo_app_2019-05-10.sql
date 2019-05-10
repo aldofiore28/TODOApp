@@ -29,7 +29,7 @@ CREATE TABLE `todo_list` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `description` varchar(500) NOT NULL,
   `completed` int(11) NOT NULL DEFAULT '0',
-  `deadline` time NOT NULL,
+  `deadline` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
