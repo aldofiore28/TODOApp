@@ -10,4 +10,5 @@ return function (App $app) {
     $app->post('/homepage/reinsertTodo', 'insertCompletedTodo');
     $app->get('/', 'chooseUser');
     $app->post('/rightUser', 'redirectUser');
+    $app->post('/newUser', 'addNewUser');
 };
