@@ -7,6 +7,7 @@ class TodoEntity
     private $id;
     private $description;
     private $completed;
+    private $deadline;
 
     /**
      * @return integer
@@ -30,5 +31,13 @@ class TodoEntity
     public function getCompleted() :int
     {
         return $this->completed;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeadline() :string
+    {
+        return $this->deadline;
     }
 }
