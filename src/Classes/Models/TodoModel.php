@@ -23,11 +23,12 @@ class TodoModel
         return TodoHydrator::getCompletedTodos($this->dbConn);
     }
 
-    public function addTodo(string $description) :bool
+    public function addTodo(string $description, string $date) :bool
     {
-        $statement = 'INSERT INTO `todo_list`(`description`) VALUES (:description);';
+        $statement = 'INSERT INTO `todo_list`(`description`, `deadline`) VALUES (:description, :date);';
         $query = $this->dbConn->prepare($statement);
         $query->bindParam(':description', $description);
+        $query->bindParam(':date', $date);
         try {
             return $query->execute();
         } catch (\PDOException $exception) {
