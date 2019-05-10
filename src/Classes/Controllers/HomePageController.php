@@ -20,8 +20,11 @@ class HomePageController
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        $args['todos'] = $this->todoModel->hydrateTodos();
-        $args['completedTodos'] = $this->todoModel->hydrateCompletedTodos();
+        $todos = $this->todoModel->hydrateTodos();
+        $completedTodos = $this->todoModel->hydrateCompletedTodos();
+        $finalTodos = $this->todoModel->checkDate($todos, $completedTodos);
+        $args['todos'] = $finalTodos['todos'];
+        $args['completedTodos'] = $finalTodos['completedTodos'];
         $this->renderer->render($response, 'homePage.phtml', $args);
     }
 }
