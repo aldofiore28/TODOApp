@@ -19,7 +19,8 @@ class AddTodoController
     {
         $userData = $request->getParsedBody();
         $description = $userData['description'];
-        $result = $this->todoModel->addTodo($description);
+        $date = $userData['date'];
+        $result = $this->todoModel->addTodo($description, $date);
         if ($result) {
             return $response->withRedirect('/homepage');
         }
