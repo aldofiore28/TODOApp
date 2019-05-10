@@ -36,4 +36,5 @@ return function (App $app) {
     $container['insertCompletedTodo'] = new \Todo\Factories\InsertCompletedTodoControllerFactory();
     $container['userModel'] = new \Todo\Factories\UserModelFactory();
     $container['chooseUser'] = new \Todo\Factories\ChooseUserControllerFactory();
+    $container['redirectUser'] = new \Todo\Factories\RedirectUserFactory();
 };

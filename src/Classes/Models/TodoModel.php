@@ -15,20 +15,27 @@ class TodoModel
 
     public function hydrateTodos() :array
     {
-        return TodoHydrator::getTodos($this->dbConn);
+        if(isset($_SESSION['userId'])) {
+            $id = $_SESSION['userId'];
+            return TodoHydrator::getTodos($this->dbConn, $id);
+        }
     }
 
     public function hydrateCompletedTodos() :array
     {
-        return TodoHydrator::getCompletedTodos($this->dbConn);
+        if(isset($_SESSION['userId'])) {
+            $id = $_SESSION['userId'];
+            return TodoHydrator::getCompletedTodos($this->dbConn, $id);
+        }
     }
 
-    public function addTodo(string $description, string $deadline) :bool
+    public function addTodo(string $description, string $deadline, string $listUserId) :bool
     {
-        $statement = 'INSERT INTO `todo_list`(`description`, `deadline`) VALUES (:description, :deadline);';
+        $statement = 'INSERT INTO `todo_list`(`description`, `deadline`, `list_user_id`) VALUES (:description, :deadline, :listUserId);';
         $query = $this->dbConn->prepare($statement);
         $query->bindParam(':description', $description);
         $query->bindParam(':deadline', $deadline);
+        $query->bindParam(':listUserId', $listUserId);
         try {
             return $query->execute();
         } catch (\PDOException $exception) {
