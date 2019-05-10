@@ -88,3 +88,7 @@ input {
 .todos {
     border-bottom: 1px solid #000000;
 }
+
+.homepage {
+    margin-top: 10px;
+}
