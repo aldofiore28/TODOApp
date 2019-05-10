@@ -14,6 +14,7 @@ class DisplayTodos
                 $result .= '<article class="todo">
                                 <div class="description">
                                     <p>' . $todo->getDescription() . '</p>
+                                    <p>' . $todo->getDeadline() . '</p>
                                 </div>
                                 <div class="finish-todo">
                                     <form method="post" action="homepage/completeTodo">
@@ -34,6 +35,7 @@ class DisplayTodos
                 $result .= '<article class="todo">
                                 <div class="description">
                                     <p>' . $todo->getDescription() . '</p>
+                                    <p>' . $todo->getDeadline() . '</p>
                                 </div>
                                 <div class="finish-todo">
                                     <form method="post" action="homepage/reinsertTodo">
