@@ -59,4 +59,18 @@ class TodoModel
             echo 'Error!';
         }
     }
+
+    public function checkDate(array $todos, array $completedTodos) :array
+    {
+        $todayDate = date('Y-m-d');
+        foreach ($todos as $key=>$value) {
+            if (date('Y-m-d', strtotime($value->getDeadline())) >= $todayDate) {
+                continue;
+            } else {
+                array_push($completedTodos, $value);
+                unset($todos[$key]);
+            }
+        }
+        return ['todos' => $todos, 'completedTodos' => $completedTodos];
+    }
 }

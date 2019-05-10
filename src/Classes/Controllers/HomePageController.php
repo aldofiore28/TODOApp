@@ -22,17 +22,9 @@ class HomePageController
     {
         $todos = $this->todoModel->hydrateTodos();
         $completedTodos = $this->todoModel->hydrateCompletedTodos();
-        $todayDate = date('Y-m-d');
-        foreach ($todos as $key=>$value) {
-            if (date('Y-m-d', strtotime($value->getDeadline())) >= $todayDate) {
-                continue;
-            } else {
-                array_push($completedTodos, $value);
-                unset($todos[$key]);
-            }
-        }
-        $args['todos'] = $todos;
-        $args['completedTodos'] = $completedTodos;
+        $finalTodos = $this->todoModel->checkDate($todos, $completedTodos);
+        $args['todos'] = $finalTodos['todos'];
+        $args['completedTodos'] = $finalTodos['completedTodos'];
         $this->renderer->render($response, 'homePage.phtml', $args);
     }
 }
