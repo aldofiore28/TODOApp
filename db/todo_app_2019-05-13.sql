@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.43)
 # Database: todo_app
-# Generation Time: 2019-05-10 12:11:50 +0000
+# Generation Time: 2019-05-13 07:57:09 +0000
 # ************************************************************
 
 
@@ -47,6 +47,17 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
+INSERT INTO `users` (`id`, `user_name`)
+VALUES
+	(1,'Aldo'),
+	(2,'Richard'),
+	(3,'Alessandro');
+
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 
